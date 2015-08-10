@@ -1,0 +1,24 @@
+application: pruebatecnica
+version: 1
+runtime: php55
+api_version: 1
+
+handlers:
+
+- url: /angular
+  static_dir: angular
+  
+- url: /directiva
+  static_dir: directiva
+  
+- url: /css
+  static_dir: css
+
+- url: /fonts
+  static_dir: fonts
+  
+- url: /main.js
+  script: main.js
+  
+- url: /.*
+  script: index.html

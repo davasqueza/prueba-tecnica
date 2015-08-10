@@ -1,0 +1,28 @@
+html, body{
+	height: 100%;
+	margin: 0px;
+}
+h1{
+	font-size: x-large;
+	margin-top: 0;
+}
+#header {
+    background-color:black;
+    color:white;
+    text-align:center;
+	height: 7%;
+}
+#section {	 
+	overflow: auto;
+	height: 100%;
+}
+#footer {
+    background-color:black;
+    color:white;
+    text-align:center;	
+	height: 3%;
+}
+#content{
+	height: 90%;
+}
+

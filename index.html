@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html ng-app="myapp">
+	<head>
+		<title>Prueba técnica</title>
+		<link href="directiva/menu-estilo.css" rel="stylesheet" type="text/css">
+		<link href="css/font-awesome.min.css" rel="stylesheet" type="text/css">
+		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		
+		<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="angular/angular.min.js"></script>
+		<script src="angular/angular-animate.js"></script>
+		<script src="angular/ui-bootstrap-tpls-0.13.0.js"></script>
+		<script src="main.js"></script>
+		<script src="directiva/menu.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+		
+		<meta charset="utf-8">
+	</head>
+	<body ng-controller="MainCtrl as Ctrl">
+		<div id="header">
+			<h1>Prueba técnica</h1>
+		</div>
+		<div id="content">
+			<menu-principal json-menu="Ctrl.JSONMenu" menu-abierto="Ctrl.AbrirMenu"></menu-principal>
+			<div id="section">
+				<tabset justified="true">
+					<tab heading="Información Actual">
+						<div class="row">
+							<div class="col-md-12">
+								<h2>Información Actual</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Posición</b>
+							</div>
+							<div class="col-md-4">
+								Latitud: {{Ctrl.DatosClima.latitude}} Longitud: {{Ctrl.DatosClima.longitude}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Zona horaria</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.timezone}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Fecha/Hora</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.time}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Resumen del clima</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.summary}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Icono</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.icon}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Distancia de la tormenta mas cercana</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.nearestStormDistance}} Km
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Distancia de la tormenta mas cercana</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.nearestStormDistance}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Intensidad de precipitación</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.precipIntensity}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Probabilidad de precipitación</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.precipIntensity}} %
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Temperatura</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.temperature}} Cª
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Sensación térmica</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.apparentTemperature}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Velocidad del viento</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.windSpeed}} Km/H
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Humedad</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.currently.humidity}}
+							</div>
+						</div>
+					</tab>
+					<tab heading="Horario de clima">
+						<div class="row">
+							<div class="col-md-12">
+								<h2>Horario de clima</h2>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Resumen</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.minutely.summary}}
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<b>Icono</b>
+							</div>
+							<div class="col-md-4">
+								{{Ctrl.DatosClima.minutely.icon}}
+							</div>
+						</div>
+					</tab>
+				</tabset>
+			</div>
+		</div>
+		<div id="footer">
+			Copyright Diego V.
+		</div>
+	</body>
+</html>

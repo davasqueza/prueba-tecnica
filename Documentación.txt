@@ -1,0 +1,52 @@
+Angular-menú
+
+Requerimientos
+- Iconos dinámicos por la librería Font-Awesome
+- Numero de menús indefinidos
+- Navegación entre elementos del menú
+- Selector de menú actual
+- Lectura de estructura de menú por medio de JSON
+- Estilos personalizados por parámetros y CSS
+- Opción de cargue dinámico de submenús por promesas 
+- Opción de mostrar/ocultar elementos del menú por medio de permisos
+- Permisos consultados por promesas, por defecto no se visualizan hasta que se resuelve la petición 
+- No tendrá ningún atributo, todo sera manejado por medio de métodos llamados desde un controlador
+
+Dependencias 
+- AngularJS
+- Font-Awesome
+
+Métodos
+- jsonMenu: JSON con la estructura del menú
+- menuActual: ID del menú actual
+- bloquearMenu: Bandera que indica si el menú se encuentra bloqueado
+- menuAbierto: Bandera que indica si el menú se encuentra abierto
+
+
+Estructura JSON menú
+{"menu":
+	[
+		{
+			"menuID":"1",
+			"nombre":"Menú 1",
+			"FAicono": "camera",
+			"subMenus":[{
+				"menuID":"1.1",
+				"nombre":"Sub-Menú 1.1",
+				"url":"menu11",
+				"subMenus":[]
+			}]
+		},
+		{
+			"menuID":"2",
+			"nombre":"Menú 2",
+			"FAicono": "cog",
+			"subMenus":[{
+				"menuID":"2.1",
+				"nombre":"Sub-Menú 2.1",
+				"url":"home",
+				"subMenus":[]
+			}]
+		}
+	]
+}

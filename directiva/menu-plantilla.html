@@ -1,0 +1,24 @@
+﻿<div class="contenedorMenu">
+	<div class="contenedorMovil" ng-class="ClaseMenu" ng-mouseenter="AbrirMenu()" ng-mouseleave="CerrarMenu()">
+		<div class="menuDerecha">
+			<div class="elementoMenuDerecha" ng-repeat="EMD in jsonMenu.menu" ng-click="AsignarUbicacionMenu(EMD.menuID)" ng-style="AlturaElementoMenu">
+				<i class="fa" ng-class="'fa-'+EMD.FAicono"></i>
+			</div>
+		</div>
+		<div class="menuIzquierda">
+			<div class="contenedorMenuIzquierda">
+				<b>{{TituloMenu}}</b>
+				<div class="contenedorMigaDePan">
+					<div class="elementoMenu" ng-repeat="elementoMenu in ElementosMenuIzquierda" ng-click="AsignarUbicacionMenu(elementoMenu.menuID)">
+						<i class="fa" ng-class="ClaseElementoMenu(elementoMenu.menuID)"></i><span>{{elementoMenu.nombre}}</span>
+					</div>
+				</div>
+				<div class="contenedorRutas">
+					<div class="elementoMenu" ng-repeat="opcionesMenu in OpcionesMenuIzquierda" ng-click="AsignarElementosActuales(opcionesMenu.menuID,opcionesMenu.url)">
+						<i class="fa fa-arrow-right"></i><span>{{opcionesMenu.nombre}}</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
+</div>
